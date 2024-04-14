@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Inteligentny Inaczej</title>
+    <meta name="description" content="Aplikacja udająca rozmowę z człowiekiem w formie tekstowej.">
+    <meta name="keywords" content="bot, chat, inteligenty inaczej">
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .form-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: min(90vw, 400px);
+            margin: 0 auto;
+        }
+        .dialog-wrapper {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .dialog-line {
+            width: 100%;
+            margin-bottom: 5px;
+            width: 100%;
+            
+        }
+        .dialog-bot {
+            font-size: 1.1em;
+            color: #333;
+            text-align: right;
+            padding-left: 20px;
+        }
+        .dialog-bot-command {
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        .dialog-question {
+            font-size: 1.2em;
+            color: #646cae;
+            padding-right: 20px;
+            margin-bottom: 5px;
+        }
+        .loading .dialog-bot:last-child {
+            margin: 0 auto;
+            width: 12px;
+            height: 12px;
+            font-size: 0;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            animation: l5 1s infinite linear alternate;
+            padding: 0;
+        }
+        
+        @keyframes l5 {
+            0%  {box-shadow: 20px 0 #000, -20px 0 #0002;background: #000 }
+            33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
+            66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
+            100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
+        }
+        .form-input {
+            height: 50px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .form-button {
+            width: 80%;
+            height: 40px;
+            background-color: #2ea270;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .form-button:hover {
+            background-color: #0f8a55;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-wrapper">
+        <div id="dialog-wrapper" class="dialog-wrapper">
+            <div class="dialog-line dialog-bot" style="font-style: italic;">Masz pytanie? Chętnie odpowiem!</div>
+        </div>
+        <input
+            id="question"
+            class="form-input"
+            placeholder="Wpisz wiadomość. Kliknij Enter, aby wysłać."
+        />
+        <button id="button" class="form-button">Wyślij</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
